@@ -199,6 +199,9 @@ section.already-have-account+a{
     font-weight: 600;
 }
 
+.long-error{
+    bottom: -40px;
+}
 
 * {
     margin: 0px;
