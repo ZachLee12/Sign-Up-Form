@@ -2,8 +2,8 @@
 let allInputs = document.querySelectorAll("input")
 
 let emailErrorMessage = "Please enter a valid email."
-let firstNameErrorMessage = "Please enter your first name."
-let lastNameErrorMessage = "Please enter your last name."
+let firstNameErrorMessage = "Please enter a valid first name."
+let lastNameErrorMessage = "Please enter a valid last name."
 let passwordErrorMessage = "Please enter a password."
 let confirmPasswordErrorMessage = "Password does not match. Try again."
 let phoneNumberErrorMessage = "Please enter a valid phone number."
