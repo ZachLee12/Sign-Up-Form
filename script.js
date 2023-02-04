@@ -147,6 +147,6 @@ phoneNumber.addEventListener("focus", (e) => {
     validateFocus(phoneNumber, phoneNumberAlreadyFocused)
 })
 
-document.querySelector("button").addEventListener("click", () => {
-    window.location.href = "./welcomePage.html"
-})
+// document.querySelector("button").addEventListener("click", () => {
+//     window.location.href = "./welcomePage.html"
+// })

@@ -34,55 +34,60 @@
             </section>
             <section class="form-container">
                 <form class="main-form" action="">
-                    <div class="form-box-left form-box">
-                        <div class="input-container">
-                            <label for="first-name">FIRST NAME*</label>
-                            <input type="text" name="first-name" id="first-name" pattern="^[a-zA-Z]+$">
-                            <span></span>
-                        </div>
+                    <div class="form-top-wrapper">
+                        <div class="form-box">
+                            <div class="input-container">
+                                <label for="first-name">FIRST NAME*</label>
+                                <input type="text" name="first-name" id="first-name" pattern="^[a-zA-Z]+$" required>
+                                <span></span>
+                            </div>
 
-                        <div class="input-container">
-                            <label for="email">EMAIL*</label>
-                            <input type="email" name="email" id="email"
-                                pattern="([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z0-9]+)\w" required>
-                            <span></span>
+                            <div class="input-container">
+                                <label for="last-name">LAST NAME*</label>
+                                <input type="text" name="last-name" id="last-name" pattern="^[a-zA-Z]+$" required>
+                                <span></span>
+                            </div>
                         </div>
+                        <div class="form-box">
+                            <div class="input-container">
+                                <label for="email">EMAIL*</label>
+                                <input type="email" name="email" id="email"
+                                    pattern="([A-Za-z0-9._-]+@[A-Za-z0-9._-]+\.[A-Za-z0-9]+)\w" required>
+                                <span></span>
+                            </div>
 
-                        <div class="input-container">
-                            <label for="password">PASSWORD*</label>
-                            <input type="password" name="password" id="password">
-                            <span></span>
+                            <div class="input-container">
+                                <label for="phone-number" class="phone-number">PHONE
+                                    NUMBER<span>(OPTIONAL)</span></label>
+                                <input type="tel" name="phone-number" placeholder="+41..." id="phone-number"
+                                    pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$">
+                                <span class="long-error"></span>
+                            </div>
                         </div>
+                        <div class="form-box">
 
+                            <div class="input-container">
+                                <label for="password">PASSWORD*</label>
+                                <input type="password" name="password" id="password" required>
+                                <span></span>
+                            </div>
+                            <div class="input-container">
+                                <label for="confirm-password">CONFIRM PASSWORD*</label>
+                                <input type="password" name="confirm-password" id="confirm-password" required>
+                                <span class="long-error"></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-box-right form-box">
-                        <div class="input-container">
-                            <label for="last-name">LAST NAME*</label>
-                            <input type="text" name="last-name" id="last-name" pattern="^[a-zA-Z]+$">
-                            <span></span>
-                        </div>
-                        <div class="input-container">
-                            <label for="phone-number" class="phone-number">PHONE NUMBER<span>(OPTIONAL)</span></label>
-                            <input type="tel" name="phone-number" 
-                            placeholder="+41..."
-                            id="phone-number" 
-                            pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$">
-                            <span class="long-error"></span>
-                        </div>
-                        <div class="input-container">
-                            <label for="confirm-password">CONFIRM PASSWORD*</label>
-                            <input type="password" name="confirm-password" id="confirm-password">
-                            <span class="long-error"></span>
+                    <div class="form-bot-wrapper">
+                        <div class="account-functions-wrapper">
+                            <button type="submit">Create Account</button>
+                            <div class="already-have-account">
+                                <div>Already have an account? Log in <a href="./welcomePage.html">here</a></div>
+                            </div>
                         </div>
                     </div>
-                    <button type="submit">Create Account</button>
                 </form>
             </section>
-            <!-- <section class="already-have-account">
-                <p>Already have an account? Log in</p>
-            </section>
-            <a href="./welcomePage.html">here</a> -->
-            
         </section>
     </section>
 

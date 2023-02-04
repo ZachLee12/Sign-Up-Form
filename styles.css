@@ -1,7 +1,26 @@
 :root {
-    --form-padding-left: 50px;
+    --form-padding-left: 0px;
     --second-form-col-height: 500px;
     --letter-spacing: 0.04em;
+}
+
+/* override browser default */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* use viewport-relative units to cover page fully */
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+/* include border and padding in element width and height */
+* {
+    box-sizing: border-box;
 }
 
 @font-face {
@@ -15,8 +34,11 @@
     display: flex;
 }
 
-.company-intro,
 .master-form-container {
+    height: 100%;
+}
+
+.company-intro{
     height: 100vh;
 }
 
@@ -51,6 +73,7 @@
     width: 40%;
     background: url("./images/background.jpg") no-repeat;
     background-size: cover;
+    /* height: 100%; */
 }
 
 .master-form-container {
@@ -63,10 +86,12 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1.7em;
     padding-left: var(--form-padding-left);
+    margin-bottom: 50px;
+    padding-left: 50px;
 }
 
-.master-form-container>section:nth-child(1) {
-    height: 450px;
+.form-description {
+    /* height:  px; */
     background-color: #eaeaea;
     position: relative;
 }
@@ -74,7 +99,6 @@
 .master-form-container>section:nth-child(2) {
     height: var(--second-form-col-height);
     display: flex;
-    box-shadow: 0 4px 10px -2px gray;
     position: relative;
 }
 
@@ -84,30 +108,47 @@
     background-color: #eaeaea;
 }
 
-.form-container .form-box {
+.main-form {
+    /* background-color: #c8ced1; */
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: center; */
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-left: var(--form-padding-left)
 }
 
-.form-container .form-box>div {
+.form-top-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #cfcdcd;
+    box-shadow: 0 4px 10px -2px gray;
+    gap: 25px;
+}
+
+.form-bot-wrapper {
+    flex-grow: 1;
+}
+
+.form-box {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.form-box>div {
     display: flex;
     flex-direction: column;
 }
 
 .form-container {
     display: flex;
-    background-color: #83c1f8;
-}
-
-.main-form {
-    background-color: #9ba5ac;
-    display: flex;
-    gap: 30px;
-    /* justify-content: space-between; */
-    flex-wrap: wrap;
-    width: 500px;
-    padding-left: var(--form-padding-left)
+    /* background-color: #83c1f8; */
 }
 
 .form-container .form-box input {
@@ -130,9 +171,16 @@
     letter-spacing: var(--letter-spacing);
 }
 
+.account-functions-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: #ffffff;
+}
+
 button[type="submit"] {
-    position: absolute;
-    bottom: -90px;
     z-index: 1;
     width: 200px;
     height: 50px;
@@ -145,6 +193,7 @@ button[type="submit"] {
     font-size: 1em;
     letter-spacing: var(--letter-spacing);
     color: #ffffff;
+    margin-top: 10px;
 }
 
 button[type="submit"]:hover {
@@ -187,18 +236,15 @@ input+span {
     bottom: -20px;
 }
 
-section.already-have-account {
+.already-have-account {
     display: inline;
     user-select: none;
-}
-
-section.already-have-account+a {
+    height: 100px;
     font-family: Helvetica, Arial, sans-serif;
-    position: absolute;
-    top: 85.35vh;
-    right: 36.75vw;
-    font-size: 1em;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .long-error {
