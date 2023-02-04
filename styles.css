@@ -59,10 +59,7 @@
     flex-direction: column;
 }
 
-
-.master-form-container .form-description .master-p-container {
-    position: absolute;
-    bottom: 10px;
+.master-p-container {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.7em;
     padding-left: var(--form-padding-left);
@@ -98,14 +95,19 @@
     flex-direction: column;
 }
 
-form>div {
+.form-container {
     display: flex;
-    gap: 100px;
-    padding-left: var(--form-padding-left)
+    background-color: #83c1f8;
 }
 
-.form-box {
-    height: 280px;
+.main-form {
+    background-color: #9ba5ac;
+    display: flex;
+    gap: 30px;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    width: 500px;
+    padding-left: var(--form-padding-left)
 }
 
 .form-container .form-box input {
@@ -172,7 +174,7 @@ span.go-to-welcome-page {
     position: relative;
 }
 
-label.phone-number>span{
+label.phone-number>span {
     position: absolute;
     font-size: 0.8em;
     padding-left: 4px;
@@ -185,12 +187,12 @@ input+span {
     bottom: -20px;
 }
 
-section.already-have-account{
+section.already-have-account {
     display: inline;
     user-select: none;
 }
 
-section.already-have-account+a{
+section.already-have-account+a {
     font-family: Helvetica, Arial, sans-serif;
     position: absolute;
     top: 85.35vh;
@@ -199,7 +201,7 @@ section.already-have-account+a{
     font-weight: 600;
 }
 
-.long-error{
+.long-error {
     bottom: -40px;
 }
 
