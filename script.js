@@ -148,5 +148,5 @@ phoneNumber.addEventListener("focus", (e) => {
 })
 
 document.querySelector("button").addEventListener("click", () => {
-    window.location.href = "./welcome.html"
+    window.location.href = "./welcomePage.html"
 })
