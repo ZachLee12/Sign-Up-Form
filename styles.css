@@ -121,6 +121,7 @@ body {
     background-color: #cfcdcd;
     box-shadow: 0 4px 10px -2px gray;
     gap: 25px;
+    padding: 10px;
 }
 
 .form-bot-wrapper {

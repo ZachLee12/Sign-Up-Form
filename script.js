@@ -5,7 +5,7 @@ let emailErrorMessage = "Please enter a valid email."
 let firstNameErrorMessage = "Please enter a valid first name."
 let lastNameErrorMessage = "Please enter a valid last name."
 let passwordErrorMessage = "Please enter a password."
-let confirmPasswordErrorMessage = "Password does not match. Try again."
+let confirmPasswordErrorMessage = "Password does not match."
 let phoneNumberErrorMessage = "Please enter a valid phone number."
 
 function isInvalid(element) {
@@ -84,13 +84,39 @@ email.addEventListener("focus", (e) => {
 //password
 let password = document.querySelector("#password")
 let passwordAlreadyFocused = false;
+password.addEventListener('keydown', (e) => {
+    console.log('key')
+    if (password.value.length >= 0 && password.value.length < 5) {
+        passwordErrorMessage = 'Must have at least 6 characters'
+        password.style.boxShadow = "0px 0px 3px 1px red"
+        password.nextElementSibling.textContent = passwordErrorMessage
+    } else if (password.value.length == 0) {
+        password.classList.add('invalid')
+        password.nextElementSibling.textContent = 'Please enter a password'
+        password.style.boxShadow = "0px 0px 3px 1px red"
+    } else if (password.value.length >= 5) { //value is read before 'keydown' is fired!, so needs to be 5 to check value of 6
+        password.style.boxShadow = "0px 0px 3px 1px green"
+        password.nextElementSibling.textContent = ""
+        password.classList.remove('invalid')
+    }
+})
 password.addEventListener("blur", (e) => {
     passwordAlreadyFocused = true;
-    validateBlur(password, passwordErrorMessage)
-})
-
-password.addEventListener("focus", (e) => {
-    validateFocus(password, passwordAlreadyFocused)
+    if (password.value.length > 0 && password.value.length < 6) {
+        passwordErrorMessage = 'Must have at least 6 characters'
+        password.style.boxShadow = "0px 0px 3px 1px red"
+        password.nextElementSibling.textContent = passwordErrorMessage
+        password.classList.add('invalid')
+    }
+    else if (password.value.length == 0) {
+        password.classList.add('invalid')
+        password.nextElementSibling.textContent = 'Please enter a password'
+        password.style.boxShadow = "0px 0px 3px 1px red"
+    } else if (password.value.length > 6) {
+        password.style.boxShadow = "0px 0px 3px 1px green"
+        password.nextElementSibling.textContent = ""
+        password.classList.remove('invalid')
+    }
 })
 
 //confirmPassword
@@ -147,11 +173,7 @@ phoneNumber.addEventListener("focus", (e) => {
     validateFocus(phoneNumber, phoneNumberAlreadyFocused)
 })
 
-document.querySelector("button").addEventListener("click", () => {
-    // if (!document.querySelector('form').checkValidity()) return
-    
-    if (password.value.length < 6 && password.value.length > 0) {
-        passwordErrorMessage = 'Should be at least 6 characters'
-    }
-    // window.location.href = "./welcomePage.html"
+document.querySelector("button").addEventListener("change", () => {
+    if (!document.querySelector('form').checkValidity()) return
+    window.location.href = "./welcomePage.html"
 })
