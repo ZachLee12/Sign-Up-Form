@@ -147,6 +147,11 @@ phoneNumber.addEventListener("focus", (e) => {
     validateFocus(phoneNumber, phoneNumberAlreadyFocused)
 })
 
-// document.querySelector("button").addEventListener("click", () => {
-//     window.location.href = "./welcomePage.html"
-// })
+document.querySelector("button").addEventListener("click", () => {
+    // if (!document.querySelector('form').checkValidity()) return
+    
+    if (password.value.length < 6 && password.value.length > 0) {
+        passwordErrorMessage = 'Should be at least 6 characters'
+    }
+    // window.location.href = "./welcomePage.html"
+})

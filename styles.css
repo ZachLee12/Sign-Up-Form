@@ -32,14 +32,15 @@ body {
 
 .master-container {
     display: flex;
+    flex-direction: row;
 }
 
 .master-form-container {
     height: 100%;
 }
 
-.company-intro{
-    height: 100vh;
+.company-intro {
+    min-height: 100vh;
 }
 
 .logo-background {
@@ -73,7 +74,6 @@ body {
     width: 40%;
     background: url("./images/background.jpg") no-repeat;
     background-size: cover;
-    /* height: 100%; */
 }
 
 .master-form-container {
@@ -93,12 +93,6 @@ body {
 .form-description {
     /* height:  px; */
     background-color: #eaeaea;
-    position: relative;
-}
-
-.master-form-container>section:nth-child(2) {
-    height: var(--second-form-col-height);
-    display: flex;
     position: relative;
 }
 
@@ -254,4 +248,23 @@ input+span {
 * {
     margin: 0px;
     padding: 0px;
+}
+
+@media screen and (max-width: 850px) {
+    .main-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .form-top-wrapper{
+        gap: 0px;
+    }
 }
