@@ -98,6 +98,7 @@ password.addEventListener('keydown', (e) => {
         password.style.boxShadow = "0px 0px 3px 1px green"
         password.nextElementSibling.textContent = ""
         password.classList.remove('invalid')
+        password
     }
 })
 password.addEventListener("blur", (e) => {
@@ -112,7 +113,7 @@ password.addEventListener("blur", (e) => {
         password.classList.add('invalid')
         password.nextElementSibling.textContent = 'Please enter a password'
         password.style.boxShadow = "0px 0px 3px 1px red"
-    } else if (password.value.length > 6) {
+    } else if (password.value.length >= 6) {
         password.style.boxShadow = "0px 0px 3px 1px green"
         password.nextElementSibling.textContent = ""
         password.classList.remove('invalid')
@@ -175,5 +176,6 @@ phoneNumber.addEventListener("focus", (e) => {
 
 document.querySelector("button").addEventListener("change", () => {
     if (!document.querySelector('form').checkValidity()) return
+    else if(password.value.length < 5) return
     window.location.href = "./welcomePage.html"
 })
